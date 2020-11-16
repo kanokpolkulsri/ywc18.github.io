@@ -1,0 +1,2 @@
+(this.webpackJsonpywc18_homework=this.webpackJsonpywc18_homework||[]).push([[0],{10:function(t,e,c){},11:function(t,e,c){"use strict";c.r(e);var n=c(0),o=c(1),r=c.n(o),i=c(3),s=c.n(i);c(9),c(10);var a=function(){return Object(n.jsx)("div",{className:"App",children:"first commit"})};s.a.render(Object(n.jsx)(r.a.StrictMode,{children:Object(n.jsx)(a,{})}),document.getElementById("root"))},9:function(t,e,c){}},[[11,1,2]]]);
+//# sourceMappingURL=main.ad8bf9dc.chunk.js.map
