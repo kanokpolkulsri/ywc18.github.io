@@ -3,7 +3,7 @@ import './HomePage.css';
 function HomePage() {
   return (
     <div className="HomePage">
-      first a
+      done setting up
     </div>
   );
 }
