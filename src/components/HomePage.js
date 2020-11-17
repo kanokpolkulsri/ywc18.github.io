@@ -9,7 +9,7 @@ class HomePage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            filters: [],
+            homePageData: HomePageData,
         }
       }
 
@@ -21,8 +21,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div className="HomePage">
-                import data
-                <SearchBar />
+                <SearchBar provinces={this.state.homePageData.provinces} />
                 <NavigationBar />
                 <span>ผลการค้นหาร้านอาหารและเครื่องดื่ม ทั้งหมด</span>
                 <FilterContainer />
