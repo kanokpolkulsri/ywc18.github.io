@@ -57,7 +57,7 @@ class SearchBar extends Component {
     
     render() {
         return (
-            <div className="SearchBar flex justify-between items-center bg-white">
+            <div className="SearchBar w-full flex justify-between items-center bg-white">
                 {this.renderLogoContainer()}
                 <div className="SearchContainer flex h-full ml-auto h-auto above-the-fold-input items-center rounded-lg overflow-hidden mr-4 md:mr-8">
                     {this.renderMapSearch()}
