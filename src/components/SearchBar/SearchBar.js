@@ -57,16 +57,20 @@ class SearchBar extends Component {
     
     render() {
         return (
-            <div className="SearchBar w-full flex justify-between items-center bg-white">
-                {this.renderLogoContainer()}
-                <div className="SearchContainer flex h-full ml-auto h-auto above-the-fold-input items-center rounded-lg overflow-hidden mr-4 md:mr-8">
-                    {this.renderMapSearch()}
-                    <Search
-                        className="TextSearch"
-                        placeholder="ค้นหา ชื่อ ร้านอาหาร และเครื่องดื่ม ร้านธงฟ้า ร้านค้า OTOP และสินค้าทั่วไป"
-                        allowClear
-                        size="large"
-                    />
+            <div className="bg-white">
+                <div className="relative bg-white z-20">
+                    <div className="SearchBar flex justify-between items-center">
+                        {this.renderLogoContainer()}
+                        <div className="SearchContainer flex h-full ml-auto h-auto above-the-fold-input items-center rounded-lg overflow-hidden mr-4 md:mr-8">
+                            {this.renderMapSearch()}
+                            <Search
+                                className="TextSearch"
+                                placeholder="ค้นหา ชื่อ ร้านอาหาร และเครื่องดื่ม ร้านธงฟ้า ร้านค้า OTOP และสินค้าทั่วไป"
+                                allowClear
+                                size="large"
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         )
