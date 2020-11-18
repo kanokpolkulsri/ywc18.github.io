@@ -14,7 +14,7 @@ class RestaurantContainer extends React.Component {
     
     render() {
         return (
-            <div className="RestaurantContainer">
+            <div className="RestaurantContainer flex-1">
                 RestaurantContainer
             </div>
         )
