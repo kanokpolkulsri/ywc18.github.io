@@ -1,3 +1,17 @@
-.NavigationBar {
-    background-color: pink;
+.NavigationBarContainer {
+    background-color: rgb(39, 57, 124);
+}
+
+.NavigateBreadCrumb {
+    max-width: 1280px;
+    margin: 0px auto;
+    color: white;
+}
+
+.Seperator {
+    margin: 0 8px;
+}
+
+.Underlined {
+    text-decoration: underline;
 }
