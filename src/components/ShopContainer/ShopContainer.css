@@ -1,0 +1,70 @@
+.ShopContainer {
+    text-align: center;
+}
+
+.LoadMoreButton {
+    height: 50px;
+    border-radius: 5px;
+}
+
+.ShopCard {
+    background-color: white;
+    border: 1px solid rgb(201, 225, 233);
+}
+
+.ShopCardImageContainer {
+    position: relative;
+}
+
+.ShopCardImage {
+    min-height: 14rem;
+    background-color: rgb(236, 236, 236);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 2px;
+}
+
+.plam {
+    width: 100%;
+    height: auto;
+}
+
+.Divider {
+    width: 65%;
+    height: 1px;
+    background-color: rgb(238, 238, 238);
+    margin: 18px 0px;
+}
+
+.ShopCardGrayText {
+    color: rgb(153, 153, 153);
+}
+
+.ShopCardBoldText {
+    color: rgb(68, 68, 68);
+}
+
+.ShopCardFaciIcon {
+    height: 1.1rem;
+    width: 1.1rem;
+}
+
+.ShopCardFacilities {
+    margin-right: 6px;
+    margin-bottom: 3px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid rgb(108, 191, 95);
+}
+
+@media (min-width: 1024px) {
+    .ShopCardImageContainer {
+        width: 250px;
+        padding: 5px;
+    }
+
+    .ShopCardImage {
+        height: 100%;
+    }
+}

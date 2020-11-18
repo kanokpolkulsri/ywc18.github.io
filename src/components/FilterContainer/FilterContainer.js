@@ -24,14 +24,14 @@ class FilterContainer extends Component {
     renderOptions = (options) => {
         if(options && options.length > 0) {
             return options.map((province, index) => {
-                return (<Option value={index}>{province}</Option>);
+                return (<Option key={index} value={index}>{province}</Option>);
             });
         }
     }
 
     renderCategoryRadios = () => {
         return this.props.categories.map((category, index) => {
-            return <Radio className="Radio" value={index}>{category.name}</Radio>;
+            return <Radio className="Radio" key={index} value={index}>{category.name}</Radio>;
         });
     }
 
@@ -115,7 +115,7 @@ class FilterContainer extends Component {
 
     renderSubCategoryRadios = () => {
         return this.props.categories[this.state.selectedCategory].subcategories.map((category, index) => {
-            return <Radio className="Radio" value={index}>{category}</Radio>;
+            return <Radio className="Radio" key={index} value={index}>{category}</Radio>;
         });
     }
 

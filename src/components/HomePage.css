@@ -1,3 +1,11 @@
+.HomePage {
+    min-height: 100vh;
+    background-image: url("https://search-merchant.xn--42caj4e6bk1f5b1j.com/images/result-bg.png");
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .ContentContainer {
     padding: 12px;
 }

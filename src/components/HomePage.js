@@ -3,7 +3,7 @@ import { HomePageData } from '../service/HomePageData';
 import SearchBar from './SearchBar/SearchBar';
 import NavigationBar from './NavigationBar/NavigationBar';
 import FilterContainer from './FilterContainer/FilterContainer';
-import RestaurantContainer from './RestaurantContainer/RestaurantContainer';
+import ShopContainer from './ShopContainer/ShopContainer';
 import Headline from './Headline/Headline';
 
 import './HomePage.css';
@@ -35,7 +35,10 @@ class HomePage extends React.Component {
                             priceRange={this.state.homePageData.priceRange}
                         />
                     </div>
-                    <RestaurantContainer />
+                    <ShopContainer
+                        priceRange={this.state.homePageData.priceRange}
+                        merchants={this.state.homePageData.merchants}
+                    />
                 </div>
             </div>
         )
