@@ -21,6 +21,7 @@ class ShopContainer extends React.Component {
                     <div class="flex items-center">
                         {shopNameTH}
                         {isOpen === "Y" && <Tag className="ml-4" color="rgb(27, 195, 0)">เปิดให้บริการ</Tag>}
+                        {isOpen === "N" && <Tag className="ml-4" color="rgb(153, 153, 153)">ปิดแล้ว</Tag>}
                     </div>
                 </div>
             </div>
