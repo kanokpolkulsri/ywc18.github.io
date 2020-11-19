@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { EnvironmentFilled } from '@ant-design/icons';
-import { Select } from 'antd';
-import { Input } from 'antd';
+import { Select, Input, Drawer } from 'antd';
+import FilterContainer from '../FilterContainer/FilterContainer';
 
 import './SearchBar.css';
 
@@ -13,6 +13,7 @@ class SearchBar extends Component {
         super(props)
         this.state = {
             selectedProvinceChange: -1,
+            showFilterDrawer: false,
         }
     }
 
@@ -54,6 +55,10 @@ class SearchBar extends Component {
             </div>
         );
     }
+
+    onCloseFilterDrawer = () => {
+        this.setState({ showFilterDrawer: false });
+    }
     
     render() {
         return (
@@ -70,8 +75,24 @@ class SearchBar extends Component {
                                 size="large"
                             />
                         </div>
+                        <img onClick={() => {this.setState({ showFilterDrawer: true })}} className="SearchFilterIcon md:hidden mr-4 cursor-pointer" src="https://search-merchant.xn--42caj4e6bk1f5b1j.com/images/filter.png" alt="" />
                     </div>
                 </div>
+                <Drawer
+                    title="ตัวเลือกคัดกรอง"
+                    placement="right"
+                    closable={true}
+                    onClose={this.onCloseFilterDrawer}
+                    visible={this.state.showFilterDrawer}
+                    width="auto"
+                    className="md:hidden"
+                >
+                    <FilterContainer
+                        provinces={this.props.provinces}
+                        categories={this.props.categories}
+                        priceRange={this.props.priceRange}
+                    />
+                </Drawer>
             </div>
         )
     }

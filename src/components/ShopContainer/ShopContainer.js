@@ -121,7 +121,7 @@ class ShopContainer extends React.Component {
 
     renderLoadMoreButton = () => {
         return (
-            <Button className="ButtonLoadMore mt-10 mx-auto w-full max-w-sm block">ดูเพิ่มเติม</Button>
+            <Button className="ButtonLoadMore mx-auto w-full max-w-sm block">ดูเพิ่มเติม</Button>
         );
     }
     

@@ -24,7 +24,11 @@ class HomePage extends React.Component {
     render() {
         return (
             <div className="HomePage">
-                <SearchBar provinces={this.state.homePageData.provinces} />
+                <SearchBar
+                    provinces={this.state.homePageData.provinces}
+                    categories={this.state.homePageData.categories}
+                    priceRange={this.state.homePageData.priceRange}
+                />
                 <NavigationBar />
                 <Headline />
                 <div className="ContentContainer flex items-start">

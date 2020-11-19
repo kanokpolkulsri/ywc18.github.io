@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { EnvironmentFilled } from '@ant-design/icons';
-import { Radio } from 'antd';
-import { Select } from 'antd';
+import { Radio, Select } from 'antd';
 
 import './FilterContainer.css';
 
@@ -58,7 +57,7 @@ class FilterContainer extends Component {
             this.setState({ selectedProvince: value });
         };
         return (
-            <div className="w-full h-10 md:mt-0 hidden md:block">
+            <div className="w-full h-10 mt-2">
                 <Select
                     onChange={onSelectedProvinceChange}
                     size="middle"
@@ -88,7 +87,7 @@ class FilterContainer extends Component {
             this.setState({ selectedPriceRange: value });
         };
         return (
-            <div className="w-full h-10 md:mt-0 hidden md:block">
+            <div className="w-full h-10 mt-2">
                 <Select
                     onChange={onSelectedPriceRangeChange}
                     size="middle"
