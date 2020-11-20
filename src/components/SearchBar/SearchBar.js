@@ -50,10 +50,8 @@ class SearchBar extends Component {
     renderLogoContainer = () => {
         return (
             <div className="LogoContainer px-4 md:px-8 px-4 md:px-8" onClick={() => {this.props.onSetBaseStages()}}>
-                <a href="/">
-                    <img alt="" src="https://search-merchant.คนละครึ่ง.com/images/halfhalf-logo.png" className="LogoImage hidden md:block" />
-                    <img alt="" src="https://search-merchant.คนละครึ่ง.com/images/halfhalf-logo-mini.png" className="LogoImage block md:hidden" />
-                </a>
+                <img alt="" src="https://search-merchant.คนละครึ่ง.com/images/halfhalf-logo.png" className="LogoImage hidden md:block" />
+                <img alt="" src="https://search-merchant.คนละครึ่ง.com/images/halfhalf-logo-mini.png" className="LogoImage block md:hidden" />
             </div>
         );
     }
