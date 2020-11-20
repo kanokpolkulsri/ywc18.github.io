@@ -31,7 +31,7 @@ class ShopContainer extends React.Component {
 
     renderShopCardSubTitlePrice = (priceLevel) => {
         if (this.props.priceRange && priceLevel) {
-            const price = this.props.priceRange[priceLevel - 1];
+            const price = this.props.priceRange[priceLevel];
             return price && <><div className="mx-3">|</div><div>{price}</div></>;
         }
     }

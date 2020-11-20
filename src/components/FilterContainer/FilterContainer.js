@@ -12,7 +12,7 @@ class FilterContainer extends Component {
         this.state = {
             selectedCategory: 0,
             selectedProvince: -1,
-            selectedPriceRange: null,
+            selectedPriceRange: 0,
             selectedSubCategory: null,
         }
       }
@@ -20,7 +20,8 @@ class FilterContainer extends Component {
     componentDidMount = () => {
         this.setState({
             selectedCategory: this.props.selectedCategory || 0,
-            selectedProvince: this.props.selectedProvince || -1
+            selectedProvince: this.props.selectedProvince || -1,
+            selectedPriceRange: this.props.selectedPriceRange || 0,
         });
     }
 
@@ -91,6 +92,7 @@ class FilterContainer extends Component {
     renderPriceRangeSearch = () => {
         const onSelectedPriceRangeChange = (value) => {
             this.setState({ selectedPriceRange: value });
+            this.props.onChangeSelectedPriceRange(value);
         };
         return (
             <div className="w-full h-10 mt-2">
@@ -127,7 +129,7 @@ class FilterContainer extends Component {
 
     renderSubCategoryContainer = () => {
         if (this.props.categories) {
-            const subCateName = "ราคา" + this.props.categories[this.state.selectedCategory].name;
+            const subCateName = "ประเภท" + this.props.categories[this.state.selectedCategory].name;
             const onSubCategoryFilterChange = (e) => {
                 this.setState({ selectedSubCategory: e.target.value});
             };
