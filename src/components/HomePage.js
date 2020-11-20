@@ -44,7 +44,7 @@ class HomePage extends React.Component {
     getMockMerchants = (homePageData) => {
         const mockMerchants = [
             {
-                "shopNameTH": "YWC Chiang Mai",
+                "shopNameTH": "YWC Sa Mut Pra Kan",
                 "categoryName": "ร้านอาหารและเครื่องดื่ม",
                 "subcategoryName": "อาหารทั่วไป อาหารตามสั่ง อาหารจานเดียว",
                 "coverImageId": "https://www.luxurysocietyasia.com/wp-content/uploads/Mahanakhon-Bangkok-SkyBar-11.jpg",
