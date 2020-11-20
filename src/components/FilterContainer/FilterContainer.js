@@ -18,6 +18,10 @@ class FilterContainer extends Component {
       }
 
     componentDidMount = () => {
+        this.setState({
+            selectedCategory: this.props.selectedCategory || 0,
+            selectedProvince: this.props.selectedProvince || -1
+        });
     }
 
     renderOptions = (options) => {
@@ -37,6 +41,7 @@ class FilterContainer extends Component {
     renderCategoryContainer = () => {
         const onCategoryFilterChange = (e) => {
             this.setState({ selectedCategory: e.target.value});
+            this.props.onChangeSelectedCategory(e.target.value);
         };
         return this.props.categories && this.props.categories.length > 0 && (
             <div className="CategoryContainer">
@@ -55,6 +60,7 @@ class FilterContainer extends Component {
     renderMapSearch = () => {
         const onSelectedProvinceChange = (value) => {
             this.setState({ selectedProvince: value });
+            this.props.onChangeSelectedProvince(value);
         };
         return (
             <div className="w-full h-10 mt-2">
@@ -113,7 +119,8 @@ class FilterContainer extends Component {
     }
 
     renderSubCategoryRadios = () => {
-        return this.props.categories[this.state.selectedCategory].subcategories.map((category, index) => {
+        return this.props.categories[this.state.selectedCategory].subcategories
+        && this.props.categories[this.state.selectedCategory].subcategories.map((category, index) => {
             return <Radio className="Radio" key={index} value={index}>{category}</Radio>;
         });
     }

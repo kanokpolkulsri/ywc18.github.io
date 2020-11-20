@@ -8,6 +8,7 @@ class ShopContainer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            showLoadMoreButton: true,
         }
       }
 
@@ -16,9 +17,9 @@ class ShopContainer extends React.Component {
 
     renderShopCardTitle = (shopNameTH, isOpen) => {
         return (shopNameTH || isOpen) && (
-            <div class="text-black text-xl font-semibold">
-                <div class="flex justify-between">
-                    <div class="tems-center">
+            <div className="text-black text-xl font-semibold">
+                <div className="flex justify-between">
+                    <div className="tems-center">
                         {shopNameTH}
                         {isOpen === "Y" && <Tag className="ml-4" color="rgb(27, 195, 0)">เปิดให้บริการ</Tag>}
                         {isOpen === "N" && <Tag className="ml-4" color="rgb(153, 153, 153)">ปิดแล้ว</Tag>}
@@ -60,8 +61,8 @@ class ShopContainer extends React.Component {
 
     renderShopCardRecommend = (items) => {
         if (items && items.length > 0) {
-            const renderItems = items.map((item) => {
-                return <div className="mr-1">{item}</div>;
+            const renderItems = items.map((item, index) => {
+                return <div className="mr-1" key={index}>{item}</div>;
             });
             return (
                 <div className="ShopCardGrayText flex font-base flex-wrap items-center  mb-2">
@@ -91,9 +92,9 @@ class ShopContainer extends React.Component {
 
     renderShopCardFacilities = (facilities) => {
         if (facilities && facilities.length > 0) {
-            const renderFaciIcons = facilities.map((faci) => {
+            const renderFaciIcons = facilities.map((faci, index) => {
                 return (
-                    <div className="ShopCardFacilities">
+                    <div className="ShopCardFacilities" key={index}>
                         <img className="ShopCardFaciIcon" alt="" src={this.getIconUrl(faci)} />
                     </div>
                 );
@@ -107,32 +108,46 @@ class ShopContainer extends React.Component {
     }
 
     renderShopCard = () => {
-        return this.props.merchants && this.props.merchants.length> 0 && this.props.merchants.map((merchant) => {
-            return (
-                (
-                    <div className="grid grid-cols-1 gap-2 mb-2">
-                        <div className="ShopCard lg:flex">
-                            <div className="ShopCardImageContainer">
-                                <div className="ShopCardImage w-full lg:max-w-xs" style={{ backgroundImage: 'url('+merchant.coverImageId+')'}}></div>
-                            </div>
-                            <div className="ShopCardContent p-4 flex-1">
-                                {this.renderShopCardTitle(merchant.shopNameTH, merchant.isOpen)}
-                                {this.renderShopCardSubTitle(merchant.categoryName, merchant.priceLevel, merchant.addressDistrictName, merchant.addressProvinceName)}
-                                <div className="Divider"></div>
-                                {this.renderShopCardContent(merchant.highlightText)}
-                                {this.renderShopCardRecommend(merchant.recommendedItems)}
-                                {this.renderShopCardFacilities(merchant.facilities)}
+        if (this.props.merchants && this.props.merchants.length> 0) {
+            const merchants = this.props.merchants.map((merchant, index) => {
+                return (
+                    (
+                        <div className="grid grid-cols-1 gap-2 mb-2" key={index}>
+                            <div className="ShopCard lg:flex">
+                                <div className="ShopCardImageContainer">
+                                    <div className="ShopCardImage w-full lg:max-w-xs" style={{ backgroundImage: 'url('+merchant.coverImageId+')'}}></div>
+                                </div>
+                                <div className="ShopCardContent p-4 flex-1">
+                                    {this.renderShopCardTitle(merchant.shopNameTH, merchant.isOpen)}
+                                    {this.renderShopCardSubTitle(merchant.categoryName, merchant.priceLevel, merchant.addressDistrictName, merchant.addressProvinceName)}
+                                    <div className="Divider"></div>
+                                    {this.renderShopCardContent(merchant.highlightText)}
+                                    {this.renderShopCardRecommend(merchant.recommendedItems)}
+                                    {this.renderShopCardFacilities(merchant.facilities)}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                )
+                    )
+                );
+            });
+
+            return (
+                <>
+                    {merchants}
+                    {this.renderLoadMoreButton()}
+                </>
             );
-        });
+        } else {
+            return (
+                <span>ไม่พบรายการสินค้า</span>
+            );
+        }
+        
     }
 
     renderLoadMoreButton = () => {
-        return (
-            <Button className="ButtonLoadMore mx-auto w-full max-w-sm block">ดูเพิ่มเติม</Button>
+        return this.state.showLoadMoreButton && (
+            <Button onClick={() => {this.setState({ showLoadMoreButton: false })}} className="ButtonLoadMore mx-auto w-full max-w-sm block">ดูเพิ่มเติม</Button>
         );
     }
     
@@ -141,7 +156,6 @@ class ShopContainer extends React.Component {
             <div className="ShopContainer flex-1">
                 <div className="flex-1">
                     {this.renderShopCard()}
-                    {this.renderLoadMoreButton()}
                 </div>
             </div>
         )
