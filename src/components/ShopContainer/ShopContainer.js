@@ -18,7 +18,7 @@ class ShopContainer extends React.Component {
         return (
             <div class="text-black text-xl font-semibold">
                 <div class="flex justify-between">
-                    <div class="flex items-center">
+                    <div class="tems-center">
                         {shopNameTH}
                         {isOpen === "Y" && <Tag className="ml-4" color="rgb(27, 195, 0)">เปิดให้บริการ</Tag>}
                         {isOpen === "N" && <Tag className="ml-4" color="rgb(153, 153, 153)">ปิดแล้ว</Tag>}
@@ -32,19 +32,17 @@ class ShopContainer extends React.Component {
         const price = this.props.priceRange[priceLevel - 1];
         const address = addressDistrictName + " " + addressProvinceName;
         return (
-            <div className="ShopCardSubTitle ShopCardGrayText flex font-sm flex-wrap">
+            <div className="ShopCardSubTitle ShopCardGrayText flex font-sm flex-wrap mt-2">
                 {categoryName && <div>{categoryName}</div>}
-                <div className="mx-3">|</div>
-                {price && <div>{price}</div>}
-                <div className="mx-3">|</div>
-                {address && <div>{address}</div>}
+                {price && <><div className="mx-3">|</div><div>{price}</div></>}
+                {address && <><div className="mx-3">|</div><div>{address}</div></>}
             </div>
         );
     }
 
     renderShopCardContent = (text) => {
         return (
-            <div className="ShopCardContent ShopCardGrayText flex font-base mb-2" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(text) }} />
+            <div className="ShopCardGrayText ShopCardContent font-base mb-2" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(text) }} />
         );
     }
 

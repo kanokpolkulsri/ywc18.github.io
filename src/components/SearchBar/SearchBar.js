@@ -38,7 +38,7 @@ class SearchBar extends Component {
                     value={this.state.selectedProvinceChange}
                     className="SelectMap ant-select w-full sm:w-48 h-10 h-10 md:h-10 text-sm ant-select-single ant-select-show-arrow"
                 >
-                    <Option value={-1}><EnvironmentFilled type="message" className="FirstOption" theme="outlined" />พื้นที่ใกล้ฉัน</Option>
+                    <Option value={-1}><EnvironmentFilled type="message" className="SearchBarFirstOption" theme="outlined" />พื้นที่ใกล้ฉัน</Option>
                     {this.renderProvinceOptions()}
                 </Select>
             </div>

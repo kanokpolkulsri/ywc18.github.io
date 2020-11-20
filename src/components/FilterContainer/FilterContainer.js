@@ -64,7 +64,7 @@ class FilterContainer extends Component {
                     value={this.state.selectedProvince}
                     className="SelectMap ant-select w-full ant-select-single ant-select-show-arrow"
                 >
-                    <Option value={-1}><EnvironmentFilled type="message" className="FirstOption" theme="outlined" />พื้นที่ใกล้ฉัน</Option>
+                    <Option value={-1}><EnvironmentFilled type="message" className="FilterContainerFirstOption" theme="outlined" />พื้นที่ใกล้ฉัน</Option>
                     {this.renderOptions(this.props.provinces)}
                 </Select>
             </div>

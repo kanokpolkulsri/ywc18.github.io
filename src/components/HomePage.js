@@ -32,7 +32,7 @@ class HomePage extends React.Component {
                 <NavigationBar />
                 <Headline />
                 <div className="ContentContainer flex items-start">
-                    <div className="FilterContainer hidden fixed md:relative md:mr-8 md:block border border-gray-500 rounded-sm">
+                    <div className="FilterContainer hidden fixed md:relative md:mr-2 md:block border border-gray-500 rounded-sm">
                         <FilterContainer
                             categories={this.state.homePageData.categories}
                             provinces={this.state.homePageData.provinces}

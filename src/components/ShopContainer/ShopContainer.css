@@ -25,6 +25,10 @@
     border-radius: 2px;
 }
 
+.ShopCardContent {
+    text-align: left;
+}
+
 .Divider {
     width: 100%;
     height: 1px;
