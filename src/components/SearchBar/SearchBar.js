@@ -86,13 +86,19 @@ class SearchBar extends Component {
                     closable={true}
                     onClose={this.onCloseFilterDrawer}
                     visible={this.state.showFilterDrawer}
-                    width="auto"
+                    width="full"
                     className="md:hidden"
                 >
                     <FilterContainer
                         provinces={this.props.provinces}
                         categories={this.props.categories}
                         priceRange={this.props.priceRange}
+                        selectedCategory={this.state.selectedCategory}
+                        onChangeSelectedCategory={this.props.onChangeSelectedCategory}
+                        selectedProvince={this.props.selectedProvince}
+                        onChangeSelectedProvince={this.props.onChangeSelectedProvince}
+                        selectedPriceRange={this.props.selectedPriceRange}
+                        onChangeSelectedPriceRange={this.props.onChangeSelectedPriceRange}
                     />
                 </Drawer>
             </div>

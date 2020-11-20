@@ -152,6 +152,12 @@ class HomePage extends React.Component {
                     selectedProvince={this.state.selectedProvince}
                     onChangeSelectedProvince={this.onChangeSelectedProvince}
                     onSetBaseStages={this.onSetBaseStages}
+                    selectedCategory={this.state.selectedCategory}
+                    onChangeSelectedCategory={this.onChangeSelectedCategory}
+                    selectedProvince={this.state.selectedProvince}
+                    onChangeSelectedProvince={this.onChangeSelectedProvince}
+                    selectedPriceRange={this.state.selectedPriceRange}
+                    onChangeSelectedPriceRange={this.onChangeSelectedPriceRange}
                 />
                 <NavigationBar />
                 <Headline />
