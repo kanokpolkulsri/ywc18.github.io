@@ -132,15 +132,6 @@ class HomePage extends React.Component {
             selectedPriceRange: value,
         });
     }
-
-    onSetBaseStages = () => {
-        this.setState({
-            merchants: this.state.homePageData.merchants,
-            selectedCategory: 0,
-            selectedProvince: -1,
-            selectedPriceRange: 0,
-        });
-    }
     
     render() {
         return (
@@ -151,7 +142,6 @@ class HomePage extends React.Component {
                     priceRange={this.state.homePageData.priceRange}
                     selectedProvince={this.state.selectedProvince}
                     onChangeSelectedProvince={this.onChangeSelectedProvince}
-                    onSetBaseStages={this.onSetBaseStages}
                     selectedCategory={this.state.selectedCategory}
                     onChangeSelectedCategory={this.onChangeSelectedCategory}
                     selectedPriceRange={this.state.selectedPriceRange}
