@@ -15,7 +15,7 @@ class ShopContainer extends React.Component {
     }
 
     renderShopCardTitle = (shopNameTH, isOpen) => {
-        return (
+        return (shopNameTH || isOpen) && (
             <div class="text-black text-xl font-semibold">
                 <div class="flex justify-between">
                     <div class="tems-center">
@@ -28,20 +28,32 @@ class ShopContainer extends React.Component {
         );
     }
 
+    renderShopCardSubTitlePrice = (priceLevel) => {
+        if (this.props.priceRange && priceLevel) {
+            const price = this.props.priceRange[priceLevel - 1];
+            return price && <><div className="mx-3">|</div><div>{price}</div></>;
+        }
+    }
+
+    renderShopCardSubTitleAddress= (addressDistrictName = '', addressProvinceName = '') => {
+        if (addressDistrictName || addressProvinceName) {
+            const address = addressDistrictName + " " + addressProvinceName;
+            return address && <><div className="mx-3">|</div><div>{address}</div></>;
+        }
+    }
+
     renderShopCardSubTitle = (categoryName, priceLevel, addressDistrictName, addressProvinceName) => {
-        const price = this.props.priceRange[priceLevel - 1];
-        const address = addressDistrictName + " " + addressProvinceName;
         return (
             <div className="ShopCardSubTitle ShopCardGrayText flex font-sm flex-wrap mt-2">
                 {categoryName && <div>{categoryName}</div>}
-                {price && <><div className="mx-3">|</div><div>{price}</div></>}
-                {address && <><div className="mx-3">|</div><div>{address}</div></>}
+                {this.renderShopCardSubTitlePrice(priceLevel)}
+                {this.renderShopCardSubTitleAddress(addressDistrictName, addressProvinceName)}
             </div>
         );
     }
 
     renderShopCardContent = (text) => {
-        return (
+        return text && (
             <div className="ShopCardGrayText ShopCardContent font-base mb-2" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(text) }} />
         );
     }
@@ -95,7 +107,7 @@ class ShopContainer extends React.Component {
     }
 
     renderShopCard = () => {
-        return this.props.merchants.map((merchant) => {
+        return this.props.merchants && this.props.merchants.length> 0 && this.props.merchants.map((merchant) => {
             return (
                 (
                     <div className="grid grid-cols-1 gap-2 mb-2">

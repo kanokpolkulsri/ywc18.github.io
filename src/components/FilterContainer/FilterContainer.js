@@ -38,7 +38,7 @@ class FilterContainer extends Component {
         const onCategoryFilterChange = (e) => {
             this.setState({ selectedCategory: e.target.value});
         };
-        return (
+        return this.props.categories && this.props.categories.length > 0 && (
             <div className="CategoryContainer">
                 <div className="text-base font-semibold text-black">
                     ประเภทร้านค้า
@@ -119,22 +119,24 @@ class FilterContainer extends Component {
     }
 
     renderSubCategoryContainer = () => {
-        const subCateName = "ราคา" + this.props.categories[this.state.selectedCategory].name;
-        const onSubCategoryFilterChange = (e) => {
-            this.setState({ selectedSubCategory: e.target.value});
-        };
-        return (
-            <div className="SubCategoryContainer mt-8">
-                <div className="text-base font-semibold text-black">
-                    {subCateName}
-                </div>
-                <Radio.Group onChange={onSubCategoryFilterChange} value={this.state.selectedSubCategory}>
-                    <div className="mt-2">
-                        {this.renderSubCategoryRadios()}
+        if (this.props.categories) {
+            const subCateName = "ราคา" + this.props.categories[this.state.selectedCategory].name;
+            const onSubCategoryFilterChange = (e) => {
+                this.setState({ selectedSubCategory: e.target.value});
+            };
+            return (
+                <div className="SubCategoryContainer mt-8">
+                    <div className="text-base font-semibold text-black">
+                        {subCateName}
                     </div>
-                </Radio.Group>
-            </div>
-        );
+                    <Radio.Group onChange={onSubCategoryFilterChange} value={this.state.selectedSubCategory}>
+                        <div className="mt-2">
+                            {this.renderSubCategoryRadios()}
+                        </div>
+                    </Radio.Group>
+                </div>
+            );
+        }
     }
     
     render() {

@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { HomePageData } from '../service/HomePageData';
 import SearchBar from './SearchBar/SearchBar';
 import NavigationBar from './NavigationBar/NavigationBar';
@@ -12,13 +13,13 @@ class HomePage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            homePageData: HomePageData,
+            homePageData: {},
         }
       }
 
-    componentDidMount = () => {
-        console.log(HomePageData);
-        console.log(HomePageData.categories);
+    componentWillMount = async () => {
+        let result = await axios.get('https://panjs.com/ywc18.json');
+        this.setState({ homePageData: result.status === 200 ? result.data : HomePageData });
     }
     
     render() {

@@ -21,7 +21,7 @@ class SearchBar extends Component {
     }
 
     renderProvinceOptions = () => {
-        return this.props.provinces.map((province, index) => {
+        return this.props.provinces && this.props.provinces.length > 0 && this.props.provinces.map((province, index) => {
             return (<Option value={index} key={index}>{province}</Option>);
         });
     }
