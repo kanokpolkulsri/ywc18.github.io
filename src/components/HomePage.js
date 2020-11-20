@@ -47,7 +47,7 @@ class HomePage extends React.Component {
                 "shopNameTH": "YWC Chiang Mai",
                 "categoryName": "ร้านอาหารและเครื่องดื่ม",
                 "subcategoryName": "อาหารทั่วไป อาหารตามสั่ง อาหารจานเดียว",
-                "coverImageId": "https://ywc18.ywc.in.th/_nuxt/img/ad2bf40.webp",
+                "coverImageId": "https://www.luxurysocietyasia.com/wp-content/uploads/Mahanakhon-Bangkok-SkyBar-11.jpg",
                 "facilities": ["รับบัตรเครดิต", "จำหน่ายเครื่องดื่มแอลกอฮอล์"],
                 "priceLevel": 3,
                 "isOpen": "Y",
@@ -60,7 +60,7 @@ class HomePage extends React.Component {
                 "shopNameTH": "Kanysorn Cafe สาขา 2",
                 "categoryName": "สินค้าทั้งหมด",
                 "subcategoryName": "สินค้า และ บริการ เกี่ยวกับการตกแต่งบ้าน",
-                "coverImageId": "https://images.unsplash.com/photo-1597227772909-a6d166b48b79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+                "coverImageId": "https://img1.10bestmedia.com/Images/Photos/352042/SupR4_54_990x660.jpg",
                 "facilities": ["ที่จอดรถ", "รับบัตรเครดิต"],
                 "priceLevel": 1,
                 "isOpen": "Y",
@@ -154,8 +154,6 @@ class HomePage extends React.Component {
                     onSetBaseStages={this.onSetBaseStages}
                     selectedCategory={this.state.selectedCategory}
                     onChangeSelectedCategory={this.onChangeSelectedCategory}
-                    selectedProvince={this.state.selectedProvince}
-                    onChangeSelectedProvince={this.onChangeSelectedProvince}
                     selectedPriceRange={this.state.selectedPriceRange}
                     onChangeSelectedPriceRange={this.onChangeSelectedPriceRange}
                 />
