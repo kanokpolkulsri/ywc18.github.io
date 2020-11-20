@@ -13,7 +13,7 @@ class FilterContainer extends Component {
             selectedCategory: 0,
             selectedProvince: -1,
             selectedPriceRange: 0,
-            selectedSubCategory: null,
+            selectedSubCategory: 0,
         }
       }
 

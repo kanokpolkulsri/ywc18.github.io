@@ -132,6 +132,15 @@ class HomePage extends React.Component {
             selectedPriceRange: value,
         });
     }
+
+    onSetBaseStages = () => {
+        this.setState({
+            merchants: this.state.homePageData.merchants,
+            selectedCategory: 0,
+            selectedProvince: -1,
+            selectedPriceRange: 0,
+        });
+    }
     
     render() {
         return (
@@ -140,6 +149,9 @@ class HomePage extends React.Component {
                     provinces={this.state.homePageData.provinces}
                     categories={this.state.homePageData.categories}
                     priceRange={this.state.homePageData.priceRange}
+                    selectedProvince={this.state.selectedProvince}
+                    onChangeSelectedProvince={this.onChangeSelectedProvince}
+                    onSetBaseStages={this.onSetBaseStages}
                 />
                 <NavigationBar />
                 <Headline />

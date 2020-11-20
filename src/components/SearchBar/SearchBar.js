@@ -18,6 +18,7 @@ class SearchBar extends Component {
     }
 
     componentDidMount = () => {
+        this.setState({ selectedProvince: this.props.selectedProvince || -1 });
     }
 
     renderProvinceOptions = () => {
@@ -29,6 +30,7 @@ class SearchBar extends Component {
     renderMapSearch = () => {
         const onSelectedProvinceChange = (value) => {
             this.setState({ selectedProvinceChange: value });
+            this.props.onChangeSelectedProvince(value);
         };
         return (
             <div className="w-full sm:w-48 h-10 md:mt-0 hidden md:block">
@@ -47,7 +49,7 @@ class SearchBar extends Component {
 
     renderLogoContainer = () => {
         return (
-            <div className="LogoContainer px-4 md:px-8 px-4 md:px-8">
+            <div className="LogoContainer px-4 md:px-8 px-4 md:px-8" onClick={() => {this.props.onSetBaseStages()}}>
                 <a href="/">
                     <img alt="" src="https://search-merchant.คนละครึ่ง.com/images/halfhalf-logo.png" className="LogoImage hidden md:block" />
                     <img alt="" src="https://search-merchant.คนละครึ่ง.com/images/halfhalf-logo-mini.png" className="LogoImage block md:hidden" />
